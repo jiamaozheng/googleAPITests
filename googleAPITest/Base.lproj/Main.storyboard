@@ -23,10 +23,16 @@
                                     <action selector="didTapSignOut:" destination="BYZ-38-t0r" eventType="valueChanged" id="w9x-Cb-hXn"/>
                                 </connections>
                             </view>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Enter a location " minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="QCI-Ix-Vej">
+                                <rect key="frame" x="0.0" y="391" width="281" height="30"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                     </view>
                     <connections>
+                        <outlet property="searchALocation" destination="QCI-Ix-Vej" id="Orv-mT-N7p"/>
                         <outlet property="signInButton" destination="i2O-NH-oUl" id="fgf-yT-cYb"/>
                     </connections>
                 </viewController>

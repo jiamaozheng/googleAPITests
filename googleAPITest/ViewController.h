@@ -12,6 +12,7 @@
 @interface ViewController : UIViewController <GIDSignInUIDelegate>
 
 @property (weak, nonatomic) IBOutlet GIDSignInButton *signInButton;
+@property (weak, nonatomic) IBOutlet UITextField *searchALocation;
 
 
 - (IBAction)didTapSignOut:(id)sender;

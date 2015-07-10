@@ -30,7 +30,8 @@
 //    [[GIDSignIn sharedInstance] signInSilently];
     // Do any additional setup after loading the view, typically from a nib.
     
-//    Request authorization from CLLocationManager for the corresponding location method, 
+//    Request authorization from CLLocationManager for the corresponding location method,
+    self.locationManager = [[CLLocationManager alloc]init];
     [self.locationManager requestWhenInUseAuthorization];
     [self.locationManager requestAlwaysAuthorization];
     
@@ -47,6 +48,7 @@
             NSLog(@"Current Place address %@", place.formattedAddress);
             NSLog(@"Current Place attributions %@", place.attributions);
             NSLog(@"Current PlaceID %@", place.placeID);
+        
         }
         
     }];
