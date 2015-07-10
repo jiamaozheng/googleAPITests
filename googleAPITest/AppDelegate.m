@@ -24,6 +24,9 @@
     NSAssert(!configureError, @"Error configuring Google services: %@", configureError);
     
     [GIDSignIn sharedInstance].delegate = self;
+    
+    //google place API
+    [GMSServices provideAPIKey:@"AIzaSyBnui94zE2a8ZKVfTPSg9knzGW3Iv3MR5w"];
     return YES;
 }
 
