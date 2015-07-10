@@ -7,9 +7,12 @@
 //
 
 #import "ViewController.h"
+#import <CoreLocation/CoreLocation.h>
+#import <GoogleMaps/GoogleMaps.h>
 
 @interface ViewController ()
 @property (strong, nonatomic) UIActivityIndicatorView *myActivtyIndicator;
+@property (strong, nonatomic) CLLocationManager *locationManager;
 @end
 
 @implementation ViewController
@@ -24,6 +27,15 @@
     // Uncomment to automatically sign in the user.
 //    [[GIDSignIn sharedInstance] signInSilently];
     // Do any additional setup after loading the view, typically from a nib.
+    
+//    Request authorization from CLLocationManager for the corresponding location method, 
+    [self.locationManager requestWhenInUseAuthorization];
+    [self.locationManager requestAlwaysAuthorization];
+}
+
+- (void) currentPlaceWithCallback:		(GMSPlaceLikelihoodListCallback) 	callback
+{
+    
 }
 
 - (void)didReceiveMemoryWarning {
