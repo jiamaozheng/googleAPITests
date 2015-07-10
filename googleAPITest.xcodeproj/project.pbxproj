@@ -15,6 +15,8 @@
 		12494D571B50048C00E44700 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 12494D561B50048C00E44700 /* Images.xcassets */; };
 		12494D5A1B50048C00E44700 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 12494D581B50048C00E44700 /* LaunchScreen.xib */; };
 		12494D661B50048D00E44700 /* googleAPITestTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 12494D651B50048D00E44700 /* googleAPITestTests.m */; };
+		12494D701B500AF700E44700 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 12494D6F1B500AF700E44700 /* GoogleService-Info.plist */; };
+		137E957707EB5D081D2C19BD /* libPods-googleAPITest.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 2249A875A957EDE8E30BDD55 /* libPods-googleAPITest.a */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -42,6 +44,10 @@
 		12494D5F1B50048D00E44700 /* googleAPITestTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = googleAPITestTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		12494D641B50048D00E44700 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		12494D651B50048D00E44700 /* googleAPITestTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = googleAPITestTests.m; sourceTree = "<group>"; };
+		12494D6F1B500AF700E44700 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		2249A875A957EDE8E30BDD55 /* libPods-googleAPITest.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-googleAPITest.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		7C7D7E9E67FDC83C96AF4CAD /* Pods-googleAPITest.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-googleAPITest.release.xcconfig"; path = "Pods/Target Support Files/Pods-googleAPITest/Pods-googleAPITest.release.xcconfig"; sourceTree = "<group>"; };
+		7D45B23745E7261AEEE9DEFE /* Pods-googleAPITest.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-googleAPITest.debug.xcconfig"; path = "Pods/Target Support Files/Pods-googleAPITest/Pods-googleAPITest.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -49,6 +55,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				137E957707EB5D081D2C19BD /* libPods-googleAPITest.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -68,6 +75,8 @@
 				12494D451B50048C00E44700 /* googleAPITest */,
 				12494D621B50048D00E44700 /* googleAPITestTests */,
 				12494D441B50048C00E44700 /* Products */,
+				9AFDA9EB80D0A5317175A61C /* Pods */,
+				9B4DC0C9FE51E423F06B6B99 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -99,6 +108,7 @@
 		12494D461B50048C00E44700 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				12494D6F1B500AF700E44700 /* GoogleService-Info.plist */,
 				12494D471B50048C00E44700 /* Info.plist */,
 				12494D481B50048C00E44700 /* main.m */,
 			);
@@ -122,6 +132,23 @@
 			name = "Supporting Files";
 			sourceTree = "<group>";
 		};
+		9AFDA9EB80D0A5317175A61C /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				7D45B23745E7261AEEE9DEFE /* Pods-googleAPITest.debug.xcconfig */,
+				7C7D7E9E67FDC83C96AF4CAD /* Pods-googleAPITest.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
+		9B4DC0C9FE51E423F06B6B99 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				2249A875A957EDE8E30BDD55 /* libPods-googleAPITest.a */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -129,9 +156,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 12494D691B50048D00E44700 /* Build configuration list for PBXNativeTarget "googleAPITest" */;
 			buildPhases = (
+				94E94F3CD218BA7C5C18DB9D /* Check Pods Manifest.lock */,
 				12494D3F1B50048C00E44700 /* Sources */,
 				12494D401B50048C00E44700 /* Frameworks */,
 				12494D411B50048C00E44700 /* Resources */,
+				8D9D48F580C1C8B4EF3A7F8A /* Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -203,6 +232,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				12494D551B50048C00E44700 /* Main.storyboard in Resources */,
+				12494D701B500AF700E44700 /* GoogleService-Info.plist in Resources */,
 				12494D5A1B50048C00E44700 /* LaunchScreen.xib in Resources */,
 				12494D571B50048C00E44700 /* Images.xcassets in Resources */,
 			);
@@ -216,6 +246,39 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		8D9D48F580C1C8B4EF3A7F8A /* Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-googleAPITest/Pods-googleAPITest-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		94E94F3CD218BA7C5C18DB9D /* Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		12494D3F1B50048C00E44700 /* Sources */ = {
@@ -351,6 +414,7 @@
 		};
 		12494D6A1B50048D00E44700 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 7D45B23745E7261AEEE9DEFE /* Pods-googleAPITest.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				INFOPLIST_FILE = googleAPITest/Info.plist;
@@ -361,6 +425,7 @@
 		};
 		12494D6B1B50048D00E44700 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 7C7D7E9E67FDC83C96AF4CAD /* Pods-googleAPITest.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				INFOPLIST_FILE = googleAPITest/Info.plist;
@@ -422,6 +487,7 @@
 				12494D6B1B50048D00E44700 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		12494D6C1B50048D00E44700 /* Build configuration list for PBXNativeTarget "googleAPITestTests" */ = {
 			isa = XCConfigurationList;
@@ -430,6 +496,7 @@
 				12494D6E1B50048D00E44700 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 
