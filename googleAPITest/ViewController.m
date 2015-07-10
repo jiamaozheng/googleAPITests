@@ -41,16 +41,13 @@
             NSLog(@"Current Place error %@", [error localizedDescription]);
             return;
         }
-        
         for (GMSPlaceLikelihood *likelihood in likelihoodList.likelihoods) {
             GMSPlace* place = likelihood.place;
             NSLog(@"Current Place name %@ at likelihood %g", place.name, likelihood.likelihood);
             NSLog(@"Current Place address %@", place.formattedAddress);
             NSLog(@"Current Place attributions %@", place.attributions);
             NSLog(@"Current PlaceID %@", place.placeID);
-        
         }
-        
     }];
 }
 
