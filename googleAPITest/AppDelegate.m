@@ -8,6 +8,7 @@
 //https://developers.google.com/mobile/add?platform=ios&cntapi=signin&cnturl=https:%2F%2Fdevelopers.google.com%2Fidentity%2Fsign-in%2Fios%2Fsign-in%3Fconfigured%3Dtrue&cntlbl=Continue%20Adding%20Sign-In
 
 #import "AppDelegate.h"
+#import <GoogleMaps/GoogleMaps.h>
 
 @interface AppDelegate ()
 
@@ -66,6 +67,10 @@ didSignInForUser:(GIDGoogleUser *)user
     NSString *idToken = user.authentication.idToken; // Safe to send to the server
     NSString *name = user.profile.name;
     NSString *email = user.profile.email;
+    
+    NSLog(@"email: ", email);
+    NSLog(@"userID: ", userId);
+    NSLog(@"name:", name);
     // ...
 }
 

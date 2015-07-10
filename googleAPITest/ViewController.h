@@ -11,6 +11,9 @@
 
 @interface ViewController : UIViewController <GIDSignInUIDelegate>
 
+@property (weak, nonatomic) IBOutlet GIDSignInButton *signInButton;
 
+
+- (IBAction)didTapSignOut:(id)sender;
 @end
 

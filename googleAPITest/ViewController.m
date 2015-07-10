@@ -22,7 +22,7 @@
     [GIDSignIn sharedInstance].uiDelegate = self;
     
     // Uncomment to automatically sign in the user.
-    //[[GIDSignIn sharedInstance] signInSilently];
+//    [[GIDSignIn sharedInstance] signInSilently];
     // Do any additional setup after loading the view, typically from a nib.
 }
 
@@ -47,6 +47,10 @@ presentViewController:(UIViewController *)viewController {
 - (void)signIn:(GIDSignIn *)signIn
 dismissViewController:(UIViewController *)viewController {
     [self dismissViewControllerAnimated:YES completion:nil];
+}
+
+- (IBAction)didTapSignOut:(id)sender {
+    [[GIDSignIn sharedInstance] signOut];
 }
 
 @end

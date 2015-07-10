@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		123B7FB61B5016E70030880D /* TestViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 123B7FB51B5016E70030880D /* TestViewController.m */; };
+		123B7FB81B5018B50030880D /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 123B7FB71B5018B50030880D /* GoogleService-Info.plist */; };
+		123B7FB91B5018B50030880D /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 123B7FB71B5018B50030880D /* GoogleService-Info.plist */; };
 		12494D491B50048C00E44700 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 12494D481B50048C00E44700 /* main.m */; };
 		12494D4C1B50048C00E44700 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 12494D4B1B50048C00E44700 /* AppDelegate.m */; };
 		12494D4F1B50048C00E44700 /* googleAPITest.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 12494D4D1B50048C00E44700 /* googleAPITest.xcdatamodeld */; };
@@ -15,7 +18,6 @@
 		12494D571B50048C00E44700 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 12494D561B50048C00E44700 /* Images.xcassets */; };
 		12494D5A1B50048C00E44700 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 12494D581B50048C00E44700 /* LaunchScreen.xib */; };
 		12494D661B50048D00E44700 /* googleAPITestTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 12494D651B50048D00E44700 /* googleAPITestTests.m */; };
-		12494D701B500AF700E44700 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 12494D6F1B500AF700E44700 /* GoogleService-Info.plist */; };
 		137E957707EB5D081D2C19BD /* libPods-googleAPITest.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 2249A875A957EDE8E30BDD55 /* libPods-googleAPITest.a */; };
 /* End PBXBuildFile section */
 
@@ -30,6 +32,9 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		123B7FB41B5016E70030880D /* TestViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = TestViewController.h; path = ../TestViewController.h; sourceTree = "<group>"; };
+		123B7FB51B5016E70030880D /* TestViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = TestViewController.m; path = ../TestViewController.m; sourceTree = "<group>"; };
+		123B7FB71B5018B50030880D /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		12494D431B50048C00E44700 /* googleAPITest.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = googleAPITest.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		12494D471B50048C00E44700 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		12494D481B50048C00E44700 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
@@ -44,7 +49,6 @@
 		12494D5F1B50048D00E44700 /* googleAPITestTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = googleAPITestTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		12494D641B50048D00E44700 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		12494D651B50048D00E44700 /* googleAPITestTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = googleAPITestTests.m; sourceTree = "<group>"; };
-		12494D6F1B500AF700E44700 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		2249A875A957EDE8E30BDD55 /* libPods-googleAPITest.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-googleAPITest.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		7C7D7E9E67FDC83C96AF4CAD /* Pods-googleAPITest.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-googleAPITest.release.xcconfig"; path = "Pods/Target Support Files/Pods-googleAPITest/Pods-googleAPITest.release.xcconfig"; sourceTree = "<group>"; };
 		7D45B23745E7261AEEE9DEFE /* Pods-googleAPITest.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-googleAPITest.debug.xcconfig"; path = "Pods/Target Support Files/Pods-googleAPITest/Pods-googleAPITest.debug.xcconfig"; sourceTree = "<group>"; };
@@ -94,6 +98,8 @@
 			children = (
 				12494D4A1B50048C00E44700 /* AppDelegate.h */,
 				12494D4B1B50048C00E44700 /* AppDelegate.m */,
+				123B7FB41B5016E70030880D /* TestViewController.h */,
+				123B7FB51B5016E70030880D /* TestViewController.m */,
 				12494D501B50048C00E44700 /* ViewController.h */,
 				12494D511B50048C00E44700 /* ViewController.m */,
 				12494D531B50048C00E44700 /* Main.storyboard */,
@@ -108,7 +114,7 @@
 		12494D461B50048C00E44700 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
-				12494D6F1B500AF700E44700 /* GoogleService-Info.plist */,
+				123B7FB71B5018B50030880D /* GoogleService-Info.plist */,
 				12494D471B50048C00E44700 /* Info.plist */,
 				12494D481B50048C00E44700 /* main.m */,
 			);
@@ -232,7 +238,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				12494D551B50048C00E44700 /* Main.storyboard in Resources */,
-				12494D701B500AF700E44700 /* GoogleService-Info.plist in Resources */,
+				123B7FB81B5018B50030880D /* GoogleService-Info.plist in Resources */,
 				12494D5A1B50048C00E44700 /* LaunchScreen.xib in Resources */,
 				12494D571B50048C00E44700 /* Images.xcassets in Resources */,
 			);
@@ -242,6 +248,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				123B7FB91B5018B50030880D /* GoogleService-Info.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -289,6 +296,7 @@
 				12494D4F1B50048C00E44700 /* googleAPITest.xcdatamodeld in Sources */,
 				12494D521B50048C00E44700 /* ViewController.m in Sources */,
 				12494D491B50048C00E44700 /* main.m in Sources */,
+				123B7FB61B5016E70030880D /* TestViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
