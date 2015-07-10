@@ -4,6 +4,7 @@
 //
 //  Created by Jiamao Zheng on 7/10/15.
 //  Copyright (c) 2015 Emerge Media. All rights reserved.
+//https://developers.google.com/places/ios/current-place
 //
 
 #import "ViewController.h"
@@ -13,6 +14,7 @@
 @interface ViewController ()
 @property (strong, nonatomic) UIActivityIndicatorView *myActivtyIndicator;
 @property (strong, nonatomic) CLLocationManager *locationManager;
+@property (strong, nonatomic) GMSPlacesClient *placesClient;
 @end
 
 @implementation ViewController
@@ -31,11 +33,23 @@
 //    Request authorization from CLLocationManager for the corresponding location method, 
     [self.locationManager requestWhenInUseAuthorization];
     [self.locationManager requestAlwaysAuthorization];
-}
-
-- (void) currentPlaceWithCallback:		(GMSPlaceLikelihoodListCallback) 	callback
-{
     
+    self.placesClient = [[GMSPlacesClient alloc]init];
+    [self.placesClient currentPlaceWithCallback:^(GMSPlaceLikelihoodList *likelihoodList, NSError *error) {
+        if (error != nil) {
+            NSLog(@"Current Place error %@", [error localizedDescription]);
+            return;
+        }
+        
+        for (GMSPlaceLikelihood *likelihood in likelihoodList.likelihoods) {
+            GMSPlace* place = likelihood.place;
+            NSLog(@"Current Place name %@ at likelihood %g", place.name, likelihood.likelihood);
+            NSLog(@"Current Place address %@", place.formattedAddress);
+            NSLog(@"Current Place attributions %@", place.attributions);
+            NSLog(@"Current PlaceID %@", place.placeID);
+        }
+        
+    }];
 }
 
 - (void)didReceiveMemoryWarning {
