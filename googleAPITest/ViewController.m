@@ -11,6 +11,8 @@
 #import <CoreLocation/CoreLocation.h>
 #import <GoogleMaps/GoogleMaps.h>
 
+static NSString * const kClientId = @"641220392338-pp1l0ku2iosvafg5ei8lcpug7ikvuac4.apps.googleusercontent.com";
+
 @interface ViewController ()
 @property (strong, nonatomic) UIActivityIndicatorView *myActivtyIndicator;
 @property (strong, nonatomic) CLLocationManager *locationManager;
