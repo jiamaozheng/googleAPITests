@@ -8,8 +8,9 @@
 
 #import <UIKit/UIKit.h>
 #import <Google/SignIn.h>
+#import <GooglePlus/GooglePlus.h>
 
-@interface ViewController : UIViewController <GIDSignInUIDelegate>
+@interface ViewController : UIViewController <GIDSignInUIDelegate, GPPSignInDelegate>
 
 @property (weak, nonatomic) IBOutlet GIDSignInButton *signInButton;
 @property (weak, nonatomic) IBOutlet UITextField *searchALocation;
