@@ -27,7 +27,7 @@
     [GIDSignIn sharedInstance].delegate = self;
     
     //google place API
-    [GMSServices provideAPIKey:@"AIzaSyBnui94zE2a8ZKVfTPSg9knzGW3Iv3MR5w"];
+    [GMSServices provideAPIKey:@"AIzaSyAzuoYRFv5fXfKvdE35fRby3dOIUgJ3Mwo"];
     return YES;
 }
 

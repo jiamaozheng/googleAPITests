@@ -16,31 +16,46 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="i2O-NH-oUl" customClass="GIDSignInButton">
-                                <rect key="frame" x="0.0" y="251" width="281" height="68"/>
-                                <color key="backgroundColor" red="0.76000236740000005" green="0.49588753289999998" blue="0.38933237970000001" alpha="1" colorSpace="calibratedRGB"/>
-                                <connections>
-                                    <action selector="didTapSignOut:" destination="BYZ-38-t0r" eventType="valueChanged" id="w9x-Cb-hXn"/>
-                                </connections>
-                            </view>
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Enter a location " minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="QCI-Ix-Vej">
                                 <rect key="frame" x="0.0" y="391" width="281" height="30"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="window login " lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ug4-Ue-GRU">
+                                <rect key="frame" x="16" y="239" width="222" height="42"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="nqG-kW-xRj">
+                                <rect key="frame" x="22" y="323" width="100" height="30"/>
+                                <state key="normal" title="window signin">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="windowSignIn:" destination="BYZ-38-t0r" eventType="touchUpInside" id="nY3-cY-fMK"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="V2o-ps-6kL" customClass="GPPSignInButton">
+                                <rect key="frame" x="6" y="106" width="209" height="66"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <state key="normal" title="google sign in "/>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                     </view>
                     <connections>
+                        <outlet property="infoLabel" destination="ug4-Ue-GRU" id="kkR-ys-QQS"/>
                         <outlet property="searchALocation" destination="QCI-Ix-Vej" id="Orv-mT-N7p"/>
-                        <outlet property="signInButton" destination="i2O-NH-oUl" id="fgf-yT-cYb"/>
+                        <outlet property="windowsinginlabel" destination="nqG-kW-xRj" id="hxp-hA-mSb"/>
+                        <segue destination="UIG-55-Cuo" kind="showDetail" identifier="jiamaozheng" id="bG4-cS-Mxe"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="200" y="412"/>
+            <point key="canvasLocation" x="131" y="424"/>
         </scene>
-        <!--Test View Controller-->
+        <!--details -->
         <scene sceneID="4gP-bQ-fTb">
             <objects>
                 <viewController id="UXd-Es-4mk" customClass="TestViewController" sceneMemberID="viewController">
@@ -55,16 +70,41 @@
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Jiamao Zheng" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="tjI-9M-zBE">
                                 <rect key="frame" x="30" y="284" width="129" height="49"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
+                    <navigationItem key="navigationItem" title="details " id="nKe-VO-kuQ">
+                        <barButtonItem key="leftBarButtonItem" title="Back" id="qae-Ug-b0a">
+                            <connections>
+                                <action selector="back:" destination="UXd-Es-4mk" id="F1V-UV-H9l"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="sf7-ch-rm4" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="886" y="412"/>
+            <point key="canvasLocation" x="1627" y="424"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="XAv-a9-c31">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="UIG-55-Cuo" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="n00-nX-MIT">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="UXd-Es-4mk" kind="relationship" relationship="rootViewController" id="nKU-Ly-Vyt"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="iWb-9y-BCs" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="893" y="424"/>
         </scene>
     </scenes>
 </document>
