@@ -98,33 +98,34 @@ NSString* APP_CLIENT_ID=@"000000004C159B30";
 //                                                        userState:@"initialize"];
 }
 
-- (void)authCompleted:(LiveConnectSessionStatus) status
-              session:(LiveConnectSession *) session
-            userState:(id) userState
-{
-    if ([userState isEqual:@"initialize"])
-    {
-        [self.infoLabel setText:@"Initialized."];
-        [self.liveClient login:self
-                        scopes:[NSArray arrayWithObjects:@"wl.signin", nil]
-                      delegate:self
-                     userState:@"signin"];
-    }
-    if ([userState isEqual:@"signin"])
-    {
-        if (session != nil)
-        {
-            [self.infoLabel setText:@"Signed in."];
-            [self performSegueWithIdentifier:@"jiamaozheng" sender:self];
-        }
-    }
-}
+//- (void)authCompleted:(LiveConnectSessionStatus) status
+//              session:(LiveConnectSession *) session
+//            userState:(id) userState
+//{
+//    if ([userState isEqual:@"initialize"])
+//    {
+//        [self.infoLabel setText:@"Initialized."];
+//        [self.liveClient login:self
+//                        scopes:[NSArray arrayWithObjects:@"wl.signin", nil]
+//                      delegate:self
+//                     userState:@"signin"];
+//    }
+//    if ([userState isEqual:@"signin"])
+//    {
+//        if (session != nil)
+//        {
+//            [self.infoLabel setText:@"Signed in."];
+//            [self performSegueWithIdentifier:@"jiamaozheng" sender:self];
+//        }
+//    }
+//}
+//
+//- (void)authFailed:(NSError *) error
+//         userState:(id)userState
+//{
 
-- (void)authFailed:(NSError *) error
-         userState:(id)userState
-{
-    [self.infoLabel setText:[NSString stringWithFormat:@"Error: %@", [error localizedDescription]]];
-}
+//    [self.infoLabel setText:[NSString stringWithFormat:@"Error: %@", [error localizedDescription]]];
+//}
 
 
 //google place api
@@ -228,48 +229,51 @@ NSString* APP_CLIENT_ID=@"000000004C159B30";
 
 - (IBAction)windowSignIn:(id)sender {
     
-//    if (self.liveClient.session == nil)
-//    {
-//        [self.liveClient login:self
-//                        scopes:[NSArray arrayWithObjects:@"wl.signin", nil ]
-//                      delegate:self
-//                     userState:@"signin"];
-//    }
-//    else
-//    {
-//        [self.liveClient logoutWithDelegate:self
-//                                  userState:@"signout"];
-//    }
-    
     //windows sign in
     self.liveClient = [[LiveConnectClient alloc] initWithClientId:APP_CLIENT_ID
                                                          delegate:self
                                                         userState:@"initialize"];
+    
+    
+    if (self.liveClient.session == nil)
+    {
+        [self.liveClient login:self
+                        scopes:[NSArray arrayWithObjects:@"wl.signin", nil ]
+                      delegate:self
+                     userState:@"signin"];
+    }
+    else
+    {
+        [self.liveClient logoutWithDelegate:self
+                                  userState:@"signout"];
+    }
+    
 }
 
 
 
-//- (void) authCompleted:(LiveConnectSessionStatus)status
-//               session:(LiveConnectSession *)session
-//             userState:(id)userState
-//{
-//    [self updateButtons];
-//    if (session != nil) {
-//        self.infoLabel.text = @"You are signed in.";
-//    }
-//}
-//
-//- (void) authFailed:(NSError *)error userState:(id)userState
-//{
-//    // Failed.
-//}
-//
-//- (void) updateButtons {
-//    LiveConnectSession *session = self.liveClient.session;
-//    NSString *signInButtonText = (session == nil)? @"Sign in": @"Sign out";
-//    [self.signInButton setTitle:signInButtonText
-//                       forState:UIControlStateNormal];
-//}
+- (void) authCompleted:(LiveConnectSessionStatus)status
+               session:(LiveConnectSession *)session
+             userState:(id)userState
+{
+    [self updateButtons];
+    if (session != nil) {
+        self.infoLabel.text = @"You are signed in.";
+        [self performSegueWithIdentifier:@"jiamaozheng" sender:self];
+    }
+}
+
+- (void) authFailed:(NSError *)error userState:(id)userState
+{
+    // Failed.
+}
+
+- (void) updateButtons {
+    LiveConnectSession *session = self.liveClient.session;
+    self.windowsinginlabel.titleLabel.text = (session == nil)? @"Sign in": @"Sign out";
+    [self.signInButton setTitle:self.windowsinginlabel
+                       forState:UIControlStateNormal];
+}
 
 
 
