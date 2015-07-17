@@ -16,7 +16,7 @@
 @interface ViewController : UIViewController <GIDSignInUIDelegate, GPPSignInDelegate, LiveAuthDelegate, LiveOperationDelegate, LiveDownloadOperationDelegate, LiveUploadOperationDelegate>
 
 
-@property (retain, nonatomic) IBOutlet GPPSignInButton *signInButton;
+//@property (retain, nonatomic) IBOutlet GPPSignInButton *signInButton;
 
 
 //@property (weak, nonatomic) IBOutlet GIDSignInButton *signInButton;
@@ -24,10 +24,14 @@
 
 @property (strong, nonatomic) LiveConnectClient *liveClient;
 @property (strong, nonatomic) IBOutlet UILabel *infoLabel;
-@property (weak, nonatomic) IBOutlet UIButton *windowsinginlabel;
+@property (weak, nonatomic) IBOutlet UIButton *signInButton;
+@property (weak, nonatomic) IBOutlet UITextView *output;
+@property (weak, nonatomic) IBOutlet UIImageView *imgView;
 
 //- (IBAction)didTapSignOut:(id)sender;
 - (IBAction)windowSignIn:(id)sender;
+- (IBAction)onClickGetButton:(id)sender;
+- (IBAction)onClickDownloadButton:(id)sender;
 
 @end
 
