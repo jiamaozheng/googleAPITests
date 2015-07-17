@@ -229,6 +229,7 @@ NSString* APP_CLIENT_ID=@"000000004C159B30";
 
 - (IBAction)windowSignIn:(id)sender {
     
+    
     //windows sign in
     self.liveClient = [[LiveConnectClient alloc] initWithClientId:APP_CLIENT_ID
                                                          delegate:self
@@ -270,9 +271,15 @@ NSString* APP_CLIENT_ID=@"000000004C159B30";
 
 - (void) updateButtons {
     LiveConnectSession *session = self.liveClient.session;
-    self.windowsinginlabel.titleLabel.text = (session == nil)? @"Sign in": @"Sign out";
-    [self.signInButton setTitle:self.windowsinginlabel
-                       forState:UIControlStateNormal];
+    
+    if (session == nil)
+    {
+        [self.signInButton setTitle:@"Sign in" forState:UIControlStateNormal];
+    }
+    else
+    {
+        [self.signInButton setTitle:@"Sign out" forState:UIControlStateNormal];
+    }
 }
 
 
