@@ -28,6 +28,8 @@
 @property (weak, nonatomic) IBOutlet UITextView *output;
 @property (weak, nonatomic) IBOutlet UIImageView *imgView;
 
+@property (strong, nonatomic) NSMutableDictionary *data; 
+
 //- (IBAction)didTapSignOut:(id)sender;
 - (IBAction)windowSignIn:(id)sender;
 - (IBAction)onClickGetButton:(id)sender;

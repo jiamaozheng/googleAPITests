@@ -39,6 +39,7 @@ static NSString * const kClientId = @"641220392338-pp1l0ku2iosvafg5ei8lcpug7ikvu
 @synthesize liveClient;
 @synthesize infoLabel;
 static NSString* const APP_CLIENT_ID=@"000000004C159B30";
+static NSString* const APP_WINDOW_SCOPE=@"wl.signin wl.basic wl.skydrive wl.photos";
 
 
 #pragma mark - Output handling
@@ -81,7 +82,7 @@ static NSString* const APP_CLIENT_ID=@"000000004C159B30";
 {
     [super viewDidLoad];
     
-    [self configureLiveClientWithScopes:@"wl.signin wl.basic wl.skydrive"];
+    [self configureLiveClientWithScopes:APP_WINDOW_SCOPE];
     [self clearOutput];
 }
 
@@ -99,9 +100,9 @@ static NSString* const APP_CLIENT_ID=@"000000004C159B30";
 
 - (void) configureLiveClientWithScopes:(NSString *)scopeText
 {
-//    if ([APP_CLIENT_ID isEqualToString:@"000000004C159B30"]) {
-//        [NSException raise:NSInvalidArgumentException format:@"The CLIENT_ID value must be specified."];
-//    }
+    if ([APP_CLIENT_ID isEqualToString:@"%APP_CLIENT_ID%"]) {
+        [NSException raise:NSInvalidArgumentException format:@"The CLIENT_ID value must be specified."];
+    }
     
     self.liveClient = [[LiveConnectClient alloc] initWithClientId:APP_CLIENT_ID
                                                             scopes:[scopeText componentsSeparatedByCharactersInSet:[NSCharacterSet whitespaceAndNewlineCharacterSet]]
@@ -155,7 +156,7 @@ static NSString* const APP_CLIENT_ID=@"000000004C159B30";
 
     if (self.liveClient.session == nil)
     {
-        [self loginWithScopes:@"wl.signin wl.basic wl.skydrive"];
+        [self loginWithScopes:APP_WINDOW_SCOPE];
     }
     else
     {
@@ -163,6 +164,27 @@ static NSString* const APP_CLIENT_ID=@"000000004C159B30";
     }
 
 }
+
+#pragma mark LiveAuthDelegate
+
+- (void) authCompleted: (LiveConnectSessionStatus) status
+               session: (LiveConnectSession *) session
+             userState: (id) userState
+{
+    NSString *scopeText = [session.scopes componentsJoinedByString:@" "];
+    [self appendOutput:[NSString stringWithFormat:@"%@ succeeded. scopes: %@",userState, scopeText]];
+    [self updateSignInButton];
+}
+
+- (void) authFailed: (NSError *) error
+          userState: (id)userState
+{
+    [self handleError:error
+              context:[NSString stringWithFormat:@"auth failed during %@", userState ]];
+}
+
+
+//getting user data
 
 - (IBAction)onClickGetButton:(id)sender
 {
@@ -200,26 +222,41 @@ static NSString* const APP_CLIENT_ID=@"000000004C159B30";
     }
 }
 
-#pragma mark LiveAuthDelegate
-
-- (void) authCompleted: (LiveConnectSessionStatus) status
-               session: (LiveConnectSession *) session
-             userState: (id) userState
-{
-    NSString *scopeText = [session.scopes componentsJoinedByString:@" "];
-    [self appendOutput:[NSString stringWithFormat:@"%@ succeeded. scopes: %@",userState, scopeText]];
-    [self updateSignInButton];
-}
-
-- (void) authFailed: (NSError *) error
-          userState: (id)userState
-{
-    [self handleError:error
-              context:[NSString stringWithFormat:@"auth failed during %@", userState ]];
-}
-
 
 #pragma mark LiveOperationDelegate
+
+//- (void) getMe
+//{
+//    if (self.liveClient) {
+//        [self.liveClient getWithPath:@"me"
+//                            delegate:self
+//                           userState:@"me"];
+//        [self.liveClient getWithPath:@"me/picture"
+//                            delegate:self
+//                           userState:@"me-picture"];
+//    }
+//}
+
+//- (void) liveOperationSucceeded:(LiveOperation *)operation
+//{
+//    if ([operation.userState isEqual:@"me"]) {
+//        NSLog(@"window user innformation: %@", operation.result);
+//        self.infoLabel.text = [operation.result objectForKey:@"name"];
+////        self.genderLabel.text = [operation.result objectForKey:@"gender"];
+////        self.profileLinkLabel.text = [operation.result objectForKey:@"link"];
+//    }
+//    if ([operation.userState isEqual:@"me-picture"]) {
+//        NSString *location = [operation.result objectForKey:@"location"];
+//        if (location) {
+//            NSData *data = [NSData dataWithContentsOfURL:[NSURL URLWithString:location]];
+//            self.imgView.image = [UIImage imageWithData:data];
+//        }
+//    }
+//}
+
+
+//https://msdn.microsoft.com/en-us/library/hh243641.aspx
+
 
 - (void) liveOperationSucceeded:(LiveOperation *)operation
 {
@@ -227,6 +264,7 @@ static NSString* const APP_CLIENT_ID=@"000000004C159B30";
     if (operation.rawResult)
     {
         [self appendOutput:operation.rawResult];
+        
     }
     
     if ([operation.userState isEqual:@"download"])
@@ -239,12 +277,12 @@ static NSString* const APP_CLIENT_ID=@"000000004C159B30";
 
 
 
-//- (void) liveOperationFailed:(NSError *)error
-//                   operation:(LiveOperation *)operation
-//{
-//    [self handleError:error context:operation.userState];
-//}
-//
+- (void) liveOperationFailed:(NSError *)error
+                   operation:(LiveOperation *)operation
+{
+    [self handleError:error context:operation.userState];
+}
+
 //- (void) liveDownloadOperationProgressed:(LiveOperationProgress *)progress data:(NSData *)receivedData operation:(LiveDownloadOperation *)operation
 //{
 //    NSString *text = [NSString stringWithFormat:@"Download in progress..%u bytes(%f %%, total %u bytes) has been transferred.", (unsigned int)progress.bytesTransferred, progress.progressPercentage * 100, (unsigned int)progress.totalBytes ];
